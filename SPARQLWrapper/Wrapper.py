@@ -153,8 +153,8 @@ _REQUEST_METHODS = [URLENCODED, POSTDIRECTLY]
 # joseki will be o.k., too. The situation with turtle and n3 is even more confusing because the text/n3 and text/turtle
 # mime types have just been proposed and not yet widely used...
 
-_SPARQL_DEFAULT = ["application/xml", "application/sparql-results+xml", "application/rdf+xml", "*/*"]
-_SPARQL_XML = ["application/xml", "application/sparql-results+xml"]
+_SPARQL_DEFAULT = ["application/sparql-results+xml", "application/rdf+xml", "*/*"]
+_SPARQL_XML = ["application/sparql-results+xml"]
 _SPARQL_JSON = [
     "application/sparql-results+json",
     "application/json",
@@ -170,7 +170,7 @@ _RDF_N3 = _RDF_TURTLE + [
     "text/n3",
 ]
 _RDF_JSONLD = ["application/ld+json", "application/x-json+ld"]
-_CSV = ["application/csv", "text/csv"]
+_CSV = ["text/csv"]
 _TSV = ["text/tab-separated-values"]
 _XML = ["application/xml"]
 _ALL = ["*/*"]
