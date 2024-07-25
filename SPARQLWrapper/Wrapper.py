@@ -926,11 +926,11 @@ class SPARQLWrapper(object):
         accept_header = self._getAcceptHeader()
 
         self.session.headers = {'Accept': accept_header,
-                                'Content-Type': accept_header}
-        self.session.params = {'query': self.queryString}
+                                'Content-Type': "application/sparql-query"
+                                }
 
-        response = self.session.get(self.endpoint, timeout=self.timeout) \
-            if self.timeout else self.session.get(self.endpoint)
+        response = self.session.post(self.endpoint, timeout=self.timeout, data=self.queryString) \
+            if self.timeout else self.session.post(self.endpoint, data=self.queryString)
 
         return response, self.returnFormat
 
